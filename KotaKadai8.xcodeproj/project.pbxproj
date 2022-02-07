@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		B9565E6B27B0DF0800AFEB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9565E6A27B0DF0800AFEB33 /* AppDelegate.swift */; };
 		B9565E6D27B0DF0800AFEB33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9565E6C27B0DF0800AFEB33 /* SceneDelegate.swift */; };
-		B9565E6F27B0DF0800AFEB33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9565E6E27B0DF0800AFEB33 /* ViewController.swift */; };
 		B9565E7227B0DF0800AFEB33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9565E7027B0DF0800AFEB33 /* Main.storyboard */; };
 		B9565E7427B0DF0A00AFEB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9565E7327B0DF0A00AFEB33 /* Assets.xcassets */; };
 		B9565E7727B0DF0A00AFEB33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9565E7527B0DF0A00AFEB33 /* LaunchScreen.storyboard */; };
+		B9565E7F27B0E84100AFEB33 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9565E7E27B0E84100AFEB33 /* RedViewController.swift */; };
+		B9565E8127B0E85A00AFEB33 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9565E8027B0E85A00AFEB33 /* GreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B9565E6727B0DF0800AFEB33 /* KotaKadai8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotaKadai8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9565E6A27B0DF0800AFEB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9565E6C27B0DF0800AFEB33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B9565E6E27B0DF0800AFEB33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B9565E7127B0DF0800AFEB33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9565E7327B0DF0A00AFEB33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9565E7627B0DF0A00AFEB33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9565E7827B0DF0A00AFEB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9565E7E27B0E84100AFEB33 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
+		B9565E8027B0E85A00AFEB33 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 			children = (
 				B9565E6A27B0DF0800AFEB33 /* AppDelegate.swift */,
 				B9565E6C27B0DF0800AFEB33 /* SceneDelegate.swift */,
-				B9565E6E27B0DF0800AFEB33 /* ViewController.swift */,
+				B9565E7E27B0E84100AFEB33 /* RedViewController.swift */,
+				B9565E8027B0E85A00AFEB33 /* GreenViewController.swift */,
 				B9565E7027B0DF0800AFEB33 /* Main.storyboard */,
-				B9565E7327B0DF0A00AFEB33 /* Assets.xcassets */,
 				B9565E7527B0DF0A00AFEB33 /* LaunchScreen.storyboard */,
+				B9565E7327B0DF0A00AFEB33 /* Assets.xcassets */,
 				B9565E7827B0DF0A00AFEB33 /* Info.plist */,
 			);
 			path = KotaKadai8;
@@ -77,6 +80,7 @@
 				B9565E6327B0DF0800AFEB33 /* Sources */,
 				B9565E6427B0DF0800AFEB33 /* Frameworks */,
 				B9565E6527B0DF0800AFEB33 /* Resources */,
+				B9565E8227B1209300AFEB33 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -133,13 +137,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B9565E8227B1209300AFEB33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B9565E6327B0DF0800AFEB33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9565E6F27B0DF0800AFEB33 /* ViewController.swift in Sources */,
+				B9565E8127B0E85A00AFEB33 /* GreenViewController.swift in Sources */,
 				B9565E6B27B0DF0800AFEB33 /* AppDelegate.swift in Sources */,
+				B9565E7F27B0E84100AFEB33 /* RedViewController.swift in Sources */,
 				B9565E6D27B0DF0800AFEB33 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
