@@ -11,18 +11,17 @@ class GreenViewController: UIViewController {
 
     @IBOutlet private weak var greenTextLabel: UILabel!
     @IBOutlet private weak var greenSlider: UISlider!
-    private var numberFloat: Float = 0.0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        numberFloat = UserDefaults.standard.float(forKey: "shareNumberFloat")
-        setLabelAndSlider(numberFloat)
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        setLabelAndSlider(delegate!.shareNumber)
     }
 
-    @IBAction func changeSlider(_ sender: Any) {
-        numberFloat = greenSlider.value
-        setLabelAndSlider(numberFloat)
-        UserDefaults.standard.set(numberFloat, forKey: "shareNumberFloat")
+    @IBAction private func changeSlider(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        delegate!.shareNumber = greenSlider.value
+        setLabelAndSlider(delegate!.shareNumber)
     }
 
     private func setLabelAndSlider(_ number: Float) {

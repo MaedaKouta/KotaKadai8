@@ -11,18 +11,17 @@ class RedViewController: UIViewController {
 
     @IBOutlet private weak var redTextLabel: UILabel!
     @IBOutlet private weak var redSlider: UISlider!
-    private var numberFloat: Float = 0.0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        numberFloat = UserDefaults.standard.float(forKey: "shareNumberFloat")
-        setLabelAndSlider(numberFloat)
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        setLabelAndSlider(delegate!.shareNumber)
     }
 
     @IBAction private func changeSlider(_ sender: Any) {
-        numberFloat = redSlider.value
-        setLabelAndSlider(numberFloat)
-        UserDefaults.standard.set(numberFloat, forKey: "shareNumberFloat")
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        delegate!.shareNumber = redSlider.value
+        setLabelAndSlider(delegate!.shareNumber)
     }
 
     private func setLabelAndSlider(_ number: Float) {
