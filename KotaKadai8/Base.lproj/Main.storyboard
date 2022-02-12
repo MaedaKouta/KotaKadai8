@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5FL-cS-nCP">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -30,17 +29,17 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="lG6-kl-maZ" customClass="RedViewController" customModule="KotaKadai8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TlV-sL-RE6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-nl-iNz">
-                                <rect key="frame" x="195" y="69" width="24" height="21"/>
+                                <rect key="frame" x="288" y="25" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3np-1u-7hN">
-                                <rect key="frame" x="23" y="115" width="368" height="31"/>
+                                <rect key="frame" x="23" y="71" width="554" height="31"/>
                                 <connections>
                                     <action selector="changeSlider:" destination="lG6-kl-maZ" eventType="valueChanged" id="yir-k1-m1C"/>
                                 </connections>
@@ -58,8 +57,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item1" id="6Oi-DQ-uEZ"/>
                     <connections>
-                        <outlet property="redSlider" destination="3np-1u-7hN" id="5Dc-TB-KVe"/>
-                        <outlet property="redTextLabel" destination="ylJ-nl-iNz" id="mpq-s9-Wde"/>
+                        <outlet property="slider" destination="3np-1u-7hN" id="5Dc-TB-KVe"/>
+                        <outlet property="textLabel" destination="ylJ-nl-iNz" id="mpq-s9-Wde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="No3-sD-xVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,17 +70,17 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tql-BE-cx4" customClass="GreenViewController" customModule="KotaKadai8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bs0-Pz-ZYi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS0-No-HMy">
-                                <rect key="frame" x="195" y="69" width="24" height="21"/>
+                                <rect key="frame" x="288" y="25" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Axh-gi-aJz">
-                                <rect key="frame" x="23" y="115" width="368" height="31"/>
+                                <rect key="frame" x="23" y="71" width="554" height="31"/>
                                 <connections>
                                     <action selector="changeSlider:" destination="Tql-BE-cx4" eventType="valueChanged" id="eUI-4u-NWt"/>
                                 </connections>
@@ -99,8 +98,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item2" id="2nm-EC-CIg"/>
                     <connections>
-                        <outlet property="greenSlider" destination="Axh-gi-aJz" id="cZ6-BI-9Tl"/>
-                        <outlet property="greenTextLabel" destination="DS0-No-HMy" id="8ek-sA-Ijv"/>
+                        <outlet property="slider" destination="Axh-gi-aJz" id="cZ6-BI-9Tl"/>
+                        <outlet property="textLabel" destination="DS0-No-HMy" id="8ek-sA-Ijv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIZ-WN-cUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
