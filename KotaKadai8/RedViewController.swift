@@ -9,24 +9,28 @@ import UIKit
 
 class RedViewController: UIViewController {
 
-    @IBOutlet private weak var redTextLabel: UILabel!
-    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var slider: UISlider!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        setLabelAndSlider(delegate!.shareNumber)
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        setLabelAndSlider(delegate.shareNumber)
     }
 
     @IBAction private func changeSlider(_ sender: Any) {
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate!.shareNumber = redSlider.value
-        setLabelAndSlider(delegate!.shareNumber)
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        delegate.shareNumber = slider.value
+        setLabelAndSlider(delegate.shareNumber)
     }
 
     private func setLabelAndSlider(_ number: Float) {
-        redSlider.value = number
-        redTextLabel.text = String(number)
+        slider.value = number
+        textLabel.text = String(number)
     }
 
 }

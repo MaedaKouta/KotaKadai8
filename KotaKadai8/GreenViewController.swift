@@ -9,24 +9,28 @@ import UIKit
 
 class GreenViewController: UIViewController {
 
-    @IBOutlet private weak var greenTextLabel: UILabel!
-    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var slider: UISlider!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        setLabelAndSlider(delegate!.shareNumber)
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        setLabelAndSlider(delegate.shareNumber)
     }
 
     @IBAction private func changeSlider(_ sender: Any) {
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate!.shareNumber = greenSlider.value
-        setLabelAndSlider(delegate!.shareNumber)
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        delegate.shareNumber = slider.value
+        setLabelAndSlider(delegate.shareNumber)
     }
 
     private func setLabelAndSlider(_ number: Float) {
-        greenSlider.value = number
-        greenTextLabel.text = String(number)
+        slider.value = number
+        textLabel.text = String(number)
     }
 
 }
